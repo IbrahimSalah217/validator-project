@@ -1,0 +1,29 @@
+<!-- <div class="margin-top: 100px"><h2>Filter Customer List</h2></div> -->
+<div>
+<mat-form-field appearance="fill">
+    <mat-label>Select Country</mat-label>
+    <mat-select [(value)]="selectedCountry">
+        <mat-option value="all">All</mat-option>
+        <mat-option *ngFor="let country of countries" [value]="country.name">
+            {{country.name}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+</div>
+<div>
+<mat-form-field appearance="fill">
+    <mat-label>Select State</mat-label>
+    <mat-select [(value)]="selectedState">
+        <mat-option value="all">All</mat-option>
+        <mat-option value="valid">Valid</mat-option>
+        <mat-option value="not valid">Not Valid</mat-option>
+    </mat-select>
+</mat-form-field>
+</div>
+
+<a [routerLink]="['/customers',selectedCountry,selectedState]" routerLinkctive="router-link-active"
+    class="list-group-item w-50 list-group-item-action flex-column">
+    <div class="d-flex w-100 justify-content-center">
+      Filter    
+    </div>
+  </a>

@@ -1,0 +1,35 @@
+  <table mat-table [dataSource]="customers" class="mat-elevation-z2">
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th style="width: 30%" *matHeaderCellDef> Name </th>
+      <td style="width: 30%" class=" {{customor.valid ? '' : 'btn-danger'}}" *matCellDef="let customor"> {{customor.name}} </td>
+    </ng-container>
+  
+    <!-- Phone Column -->
+    <ng-container  matColumnDef="phone">
+      <th style="width: 15%" *matHeaderCellDef> Phone </th>
+      <td style="width: 15%" class=" {{customor.valid ? '' : 'btn-danger'}}" *matCellDef="let customor"> {{customor.phone}} </td>
+    </ng-container>
+  
+    <!-- Country Name Column -->
+    <ng-container  matColumnDef="countryName">
+      <th style="width: 20%" *matHeaderCellDef> Country Name </th>
+      <td style="width: 20%" class=" {{customor.valid ? '' : 'btn-danger'}}" *matCellDef="let customor"> {{customor.countryName}} </td>
+    </ng-container>
+  
+    <!-- Country Code Column -->
+    <ng-container  matColumnDef="countryCode">
+      <th style="width: 15%" *matHeaderCellDef> Country Code </th>
+      <td style="width: 15%" class=" {{customor.valid ? '' : 'btn-danger'}}" *matCellDef="let customor"> {{customor.countryCode}} </td>
+    </ng-container>
+
+     <!-- State Column -->
+      <ng-container  matColumnDef="state">
+        <th style="width: 10%" *matHeaderCellDef> State </th>
+        <td style="width: 10%" class=" {{customor.valid ? '' : 'btn-danger'}}" *matCellDef="let customor"> {{customor.valid ? 'valid' : 'not valid'}} </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
