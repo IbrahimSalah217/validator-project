@@ -3,7 +3,6 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
 
 import { BrowserModule } from '@angular/platform-browser';
-import { DataTableModule } from 'angular-datatable';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,7 +25,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    DataTableModule,
     BrowserAnimationsModule
   ],
   providers: [],
